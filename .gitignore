@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+*.egg
+*.whl
+
+# Build - 仅忽略中间产物，dist/ EXE 纳入基线
+build/
+*.spec.bak
+
+# Release binaries and mobile build caches
+dist/
+artifacts/
+*.exe
+*.apk
+*.aab
+*.zip
+.gradle/
+.dart_tool/
+mobile/.gradle/
+mobile/android/.gradle/
+mobile/android/app/build/
+
+# IDE
+.vscode/
+.idea/
+
+# WorkBuddy
+.workbuddy/
+
+# System
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Android 测试 classpath 临时文件
+mobile/android/app/test_cp.txt

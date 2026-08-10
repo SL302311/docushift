@@ -1,0 +1,14 @@
+// Adds China-accessible mirrors before Gradle's standard repositories.
+// Official repositories remain available as fallbacks in the project and Flutter SDK.
+beforeSettings { settings ->
+    settings.pluginManagement.repositories {
+        maven { url = uri('https://maven.aliyun.com/repository/google') }
+        maven { url = uri('https://maven.aliyun.com/repository/gradle-plugin') }
+        maven { url = uri('https://maven.aliyun.com/repository/central') }
+    }
+
+    settings.dependencyResolutionManagement.repositories {
+        maven { url = uri('https://maven.aliyun.com/repository/google') }
+        maven { url = uri('https://maven.aliyun.com/repository/central') }
+    }
+}

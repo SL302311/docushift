@@ -1,0 +1,14 @@
+allprojects {
+    afterEvaluate { p ->
+        if (p.plugins.hasPlugin('com.android.application')) {
+            p.tasks.register('printTestCp') {
+                doLast {
+                    def cp = p.tasks.testDebugUnitTest.classpath.files.collect { it.absolutePath }.join(';')
+                    def out = new File(p.projectDir, 'test_cp.txt')
+                    out.setText(cp, 'UTF-8')
+                    println "TEST_CLASSPATH_WRITTEN: " + out.absolutePath
+                }
+            }
+        }
+    }
+}
